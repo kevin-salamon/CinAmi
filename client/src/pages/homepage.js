@@ -55,7 +55,8 @@ class Homepage extends Component {
                         </div>
                     </div>
                 ) : (
-                    this.state.movieList.map(movie => {
+                    <div className="flex-container">
+                    {this.state.movieList.map(movie => {
                         return(
                             <>                
                                 <MoviePrint 
@@ -65,7 +66,8 @@ class Homepage extends Component {
                                 />
                             </>
                         );
-                    })
+                    })}
+                    </div>
                 )}
             </>
          );
