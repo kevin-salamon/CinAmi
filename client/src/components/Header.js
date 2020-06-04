@@ -1,37 +1,50 @@
-import React, { Component } from "react";
+import React from "react";
 import "../pagestyle.css";
+import AddMovieModal from "./AddMovieModal";
 
-class Header extends Component {
+function Header(props) {
 
-    render() {
-        return (
-            <>
-                <nav className="nav header-custom">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-3" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
-                                <img src={require("../images/logo.png")} className="logo" alt={"logo"} />
-                            </div>
-                            <div className="col-lg-3" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
-                                <p className="header-description">One-stop shopping for sharing movie reviews with friends</p>
-                            </div>
-                            <div className="col-lg-2" style={{display: "flex", justifyContent: "center", alignItems: "center"}}></div>
-                            <div className="col-lg-2" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
-                                <p>Search</p>
-                            </div>
-                            <div className="col-lg-1" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
-                                <p>Login</p>
-                            </div>
-                            <div className="col-lg-1" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
-                                <p>Sign-up</p>
-                            </div>
+    return (
+        <>
+            <nav className="nav header-custom">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-3" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+                            <img src={require("../images/logo.png")} className="logo" alt={"logo"} />
+                        </div>
+                        <div className="col-lg-2" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+                            <p className="header-description">Tagline here</p>
+                        </div>
+                        <div className="col-lg-1" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+                            <AddMovieModal 
+                                handleGetSavedMovies ={props.handleGetSavedMovies}
+                            />
+                        </div>
+                        <div className="col-lg-2" style={{display: "flex", justifyContent: "center", alignItems: "center"}}></div>
+                        <div className="col-lg-2" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+                        <form className="form">
+                            <input
+                                className=""
+                                // value={props.search}
+                                // onChange={props.handleInputChange}
+                                type="text"
+                                placeholder="Search Movies"
+                            />
+                        </form>
+                        </div>
+                        <div className="col-lg-1" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+                            <button className="btn btn-info header-button">Login</button>
+                        </div>
+                        <div className="col-lg-1" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
+                            <button className="btn btn-info header-button">Sign-up</button>
                         </div>
                     </div>
-                </nav>
-            </>
-        );
-    };
+                </div>
+            </nav>
+        </>
+    );
+};
 
-}
+
 
 export default Header;

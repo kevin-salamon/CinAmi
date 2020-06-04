@@ -27,12 +27,22 @@ class Homepage extends Component {
         updateMovie(movieId, movieData)
           .then(this.handleGetSavedMovies)
           .catch(err => console.log(err));
-      }
+    }
+
+    handleFormSubmit = event => {
+        event.preventDefault();
+        this.handleGetSavedMovies();
+        this.setState({
+          searchTerm: ""
+        });
+    };
 
     render() {
         return (
             <>
-                <Header />
+                <Header 
+                    handleGetSavedMovies={this.handleGetSavedMovies}
+                />
             </>
         );
     };
