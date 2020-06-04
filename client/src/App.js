@@ -1,9 +1,18 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Homepage from "./pages/homepage";
 
-function App() {
+const App = () => {
   return (
-    <h1>Start</h1>
-  );
+    <Router>
+      <React.Fragment>
+        <Switch>
+          <Route exact path="/" component={Homepage} />
+        </Switch>
+      </React.Fragment>
+    </Router>
+  )
 }
 
 export default App;
+
