@@ -1,0 +1,14 @@
+.header-custom {
+    padding: 10px;
+    background-color: whitesmoke;
+}
+
+.logo {
+    width: 200px;
+    height: 85px;
+}
+
+.header-description {
+    font-size: 1.2em;
+    font-weight: 550;
+}
