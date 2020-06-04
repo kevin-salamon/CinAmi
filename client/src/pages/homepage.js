@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import Header from "../components/Header";
+import MoviePrint from "../components/MoviePrint";
 import { removeMovie, getSavedMovies, updateMovie } from "../utils/API";
 import "../pagestyle.css";
 
 class Homepage extends Component {
     state = {
         searchTerm: "",
-        movieList: [],
+        movieList: []
+    }
+
+    componentDidMount() {
+        this.handleGetSavedMovies();
     }
 
     handleGetSavedMovies = () => {
@@ -43,8 +48,27 @@ class Homepage extends Component {
                 <Header 
                     handleGetSavedMovies={this.handleGetSavedMovies}
                 />
+                {!this.state.movieList.length ? (
+                    <div className="row">
+                        <div className="col-sm-12">
+                            <h1 className="text-center intro-text">No movies yet!</h1>
+                        </div>
+                    </div>
+                ) : (
+                    this.state.movieList.map(movie => {
+                        return(
+                            <>                
+                                <MoviePrint 
+                                    background={movie.picture}
+                                    title={movie.title}
+                                    desc={movie.description}
+                                />
+                            </>
+                        );
+                    })
+                )}
             </>
-        );
+         );
     };
 
 
