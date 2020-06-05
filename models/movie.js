@@ -12,7 +12,7 @@ const movieSchema = new Schema({
         type: String
     },
     rating: {
-        type: Number
+        type: Array
     },
     comments: {
         type: Array
