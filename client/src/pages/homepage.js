@@ -63,6 +63,7 @@ class Homepage extends Component {
                                     background={movie.picture}
                                     title={movie.title}
                                     desc={movie.description}
+                                    comments={movie.comments}
                                 />
                             </>
                         );

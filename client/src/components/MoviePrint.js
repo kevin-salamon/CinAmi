@@ -14,6 +14,7 @@ function MoviePrint(props) {
           backgroundSize: "cover"}}>
             <h1 className="movie-title">{props.title}</h1>
             <p className="movie-desc">{props.desc}</p>
+            <p className="movie-desc">{props.comments}</p>
         </div>
     );
 };
