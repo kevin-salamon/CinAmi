@@ -12,7 +12,7 @@ export const removeMovie = movieId => {
   return axios.delete(`/api/movies/${movieId}`);
 }
 
-export const updateMovie = (movieId, movieData) => {
+export const updateMovieComments = (movieId, movieData) => {
   return axios.put(`/api/movies/${movieId}`, movieData);
 }
 
@@ -20,5 +20,5 @@ export default {
   saveMovie,
   getSavedMovies,
   removeMovie,
-  updateMovie
+  updateMovieComments
 }

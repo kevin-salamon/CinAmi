@@ -21,11 +21,26 @@ module.exports = {
       res.json(err);
     });
   },
-  updateMovie: function(req, res) {
-    db.Movie.findOneAndUpdate({ _id: req.params.id }, req.body)
+  // updateMovie: function(req, res) {
+  //   db.Movie.findOneAndUpdate({ _id: req.params.id }, req.body)
+  //   .then(dbMovieData => res.json(dbMovieData)).catch(err => {
+  //     console.log(err);
+  //     res.json(err);
+  //   });
+  // },
+  updateMovieComments: function(req, res) {
+    db.Movie.findOneAndUpdate({ _id: req.params.id }, { $push: {comments: req.body} })
     .then(dbMovieData => res.json(dbMovieData)).catch(err => {
       console.log(err);
       res.json(err);
     });
   }
+  // updateMovieRating: function(req, res) {
+  //   db.Movie.findOneAndUpdate({ _id: req.params.id }, { $push: {rating: req.body} })
+  //   .then(dbMovieData => res.json(dbMovieData)).catch(err => {
+  //     console.log(err);
+  //     res.json(err);
+  //   });
+  // }
 };
+

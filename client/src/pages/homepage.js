@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Header from "../components/Header";
 import MoviePrint from "../components/MoviePrint";
-import { removeMovie, getSavedMovies, updateMovie } from "../utils/API";
+import { removeMovie, getSavedMovies, updateMovieComments } from "../utils/API";
 import "../pagestyle.css";
 
 class Homepage extends Component {
@@ -29,7 +29,7 @@ class Homepage extends Component {
     }
 
     handleUpdateMovie = (movieId, movieData) => {
-        updateMovie(movieId, movieData)
+        updateMovieComments(movieId, movieData)
           .then(this.handleGetSavedMovies)
           .catch(err => console.log(err));
     }
