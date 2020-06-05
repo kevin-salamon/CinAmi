@@ -44,7 +44,7 @@
     justify-content: center;
     align-items: center;
     color: white;
-    padding: 5%;
+    padding: 2%;
     border-radius: 7px;
 }
 
@@ -63,7 +63,7 @@
 
 .comment-container {
     width: 80%;
-    height: 100px;
+    height: 200px;
     border: 2px solid black;
     overflow: auto;
     background-color: white;
