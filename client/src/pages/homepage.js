@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Header from "../components/Header";
 import MoviePrint from "../components/MoviePrint";
-import { removeMovie, getSavedMovies, updateMovieComments } from "../utils/API";
+import { removeMovie, getSavedMovies } from "../utils/API";
 import "../pagestyle.css";
 
 class Homepage extends Component {
@@ -24,12 +24,6 @@ class Homepage extends Component {
 
     handleRemoveMovie = movieId => {
         removeMovie(movieId)
-          .then(this.handleGetSavedMovies)
-          .catch(err => console.log(err));
-    }
-
-    handleUpdateMovie = (movieId, movieData) => {
-        updateMovieComments(movieId, movieData)
           .then(this.handleGetSavedMovies)
           .catch(err => console.log(err));
     }
@@ -60,10 +54,13 @@ class Homepage extends Component {
                         return(
                             <>                
                                 <MoviePrint 
+                                    key={movie._id}
+                                    movieId={movie._id}
                                     background={movie.picture}
                                     title={movie.title}
                                     desc={movie.description}
                                     comments={movie.comments}
+                                    handleGetSavedMovies={this.handleGetSavedMovies}
                                 />
                             </>
                         );

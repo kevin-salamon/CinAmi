@@ -28,8 +28,8 @@ module.exports = {
   //     res.json(err);
   //   });
   // },
-  updateMovieComments: function(req, res) {
-    db.Movie.findOneAndUpdate({ _id: req.params.id }, { $push: {comments: req.body} })
+  updateMovie: function(req, res) {
+    db.Movie.findOneAndUpdate({ _id: req.params.id }, { $push: req.body })
     .then(dbMovieData => res.json(dbMovieData)).catch(err => {
       console.log(err);
       res.json(err);
