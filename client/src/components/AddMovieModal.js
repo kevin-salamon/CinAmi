@@ -12,7 +12,6 @@ function NewMovieModal(props) {
     const titleRef = useRef();
     const pictureRef = useRef();
     const descriptionRef = useRef();
-    const ratingRef = useRef();
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -20,7 +19,6 @@ function NewMovieModal(props) {
             title: titleRef.current.value,
             picture: pictureRef.current.value,
             description: descriptionRef.current.value,
-            rating: ratingRef.current.value,
         };
 
         console.log(`Adding movie: ${newMovie}`);
@@ -45,6 +43,7 @@ function NewMovieModal(props) {
                 </Modal.Header>
                 <Modal.Body style={{ backgroundColor: "rgb(255, 179, 38)" }}>
                     <form>
+
                         <div className="form-group text-center">
                             <input
                                 className="input"
@@ -67,15 +66,6 @@ function NewMovieModal(props) {
                                 ref={descriptionRef}
                                 type="text"
                                 placeholder="Description"
-                            />
-                        </div>
-
-                        <div className="form-group text-center">
-                            <input
-                                className="input"
-                                ref={ratingRef}
-                                type="text"
-                                placeholder="Rating"
                             />
                         </div>
 

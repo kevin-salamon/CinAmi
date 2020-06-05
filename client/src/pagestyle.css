@@ -1,3 +1,7 @@
+#root {
+    background-color: white;
+}
+
 .header-custom {
     padding: 10px;
     background-color: rgb(177, 26, 26);
@@ -29,13 +33,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: whitesmoke;
 }
 
 .movie-flex-container {
     display: flex;
-    width: 700px;
-    height: 500px;
+    width: 500px;
+    height: 400px;
     margin: 2%;
     flex-direction: column;
     justify-content: center;
@@ -55,14 +58,7 @@
 .movie-desc {
     text-align: center;
     font-family: 'Roboto Slab', serif;
-    font-size: 1.1em;
-}
-
-.movie-link {
-    font-size: 1.3em;
-    text-align: center;
-    text-decoration: underline;
-    font-family: 'Bebas Neue', cursive;
+    font-size: 0.8em;
 }
 
 .comment-container {

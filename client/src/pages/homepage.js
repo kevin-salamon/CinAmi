@@ -59,6 +59,7 @@ class Homepage extends Component {
                                     background={movie.picture}
                                     title={movie.title}
                                     desc={movie.description}
+                                    rating={movie.rating}
                                     comments={movie.comments}
                                     handleGetSavedMovies={this.handleGetSavedMovies}
                                 />

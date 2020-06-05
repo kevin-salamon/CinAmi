@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { useRef } from 'react'
 import '../pagestyle.css';
 import EditCommentsModal from "./EditCommentsModal";
+import { updateMovie} from "../utils/API";
 
 function MoviePrint(props) {
+
+    const commentRef = useRef();
+
+    function handleUpdateMovie(movieId, movieData) {
+        updateMovie(movieId, movieData)
+          .then(props.handleGetSavedMovies())
+          .catch(err => console.log(err));
+    }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        const newComment = {
+            comments: commentRef.current.value,
+        };
+
+        handleUpdateMovie(props.movieId, newComment);
+    }
 
     return (
         <div className="movie-flex-container" style={{background: `linear-gradient(
@@ -15,16 +33,20 @@ function MoviePrint(props) {
           backgroundSize: "cover"}}>
             <h1 className="movie-title">{props.title}</h1>
             <p className="movie-desc">{props.desc}</p>
-            <div className="comment-container">
-                {props.comments.map(comment => {
-                    return(
-                        <p>{comment}</p>
-                    );
-                })}
-            </div>
+            <p>{props.rating} stars</p>
+            <form>
+                <div className="form-group text-center">
+                    <input
+                        className="input"
+                        ref={commentRef}
+                        type="text"
+                        placeholder="Add your comment"
+                    />
+                    <button>Submit</button>
+                </div>
+            </form>
             <EditCommentsModal
-                movieId={props.movieId}
-                handleGetSavedMovies={props.handleGetSavedMovies}
+                comments={props.comments}
             />
         </div>
     );
