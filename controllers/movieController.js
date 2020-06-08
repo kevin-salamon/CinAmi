@@ -21,13 +21,6 @@ module.exports = {
       res.json(err);
     });
   },
-  // updateMovie: function(req, res) {
-  //   db.Movie.findOneAndUpdate({ _id: req.params.id }, req.body)
-  //   .then(dbMovieData => res.json(dbMovieData)).catch(err => {
-  //     console.log(err);
-  //     res.json(err);
-  //   });
-  // },
   updateMovie: function(req, res) {
     db.Movie.findOneAndUpdate({ _id: req.params.id }, { $push: req.body })
     .then(dbMovieData => res.json(dbMovieData)).catch(err => {
@@ -35,12 +28,5 @@ module.exports = {
       res.json(err);
     });
   }
-  // updateMovieRating: function(req, res) {
-  //   db.Movie.findOneAndUpdate({ _id: req.params.id }, { $push: {rating: req.body} })
-  //   .then(dbMovieData => res.json(dbMovieData)).catch(err => {
-  //     console.log(err);
-  //     res.json(err);
-  //   });
-  // }
 };
 

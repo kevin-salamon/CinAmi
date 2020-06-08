@@ -16,9 +16,19 @@ export const updateMovie = (movieId, movieData) => {
   return axios.put(`/api/movies/${movieId}`, movieData);
 }
 
+export const saveUser = userData => {
+  return axios.post("/api/users", userData);
+}
+
+export const getSavedUsers = () => {
+  return axios.get("/api/users");
+}
+
 export default {
   saveMovie,
   getSavedMovies,
   removeMovie,
-  updateMovie
+  updateMovie,
+  saveUser,
+  getSavedUsers
 }
