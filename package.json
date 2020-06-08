@@ -1,7 +1,7 @@
 {
-  "name": "interview-app",
+  "name": "cinami",
   "version": "1.0.0",
-  "description": "interview app",
+  "description": "A movie review app where users can create an account, add movies, and review same with their friends.",
   "main": "server.js",
   "engines": {
     "node": "10.16.3"
