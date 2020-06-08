@@ -11,6 +11,13 @@ function MoviePrint(props) {
           .catch(err => console.log(err));
     }
 
+    let totalRating = 0;
+    for (let number of props.rating) {
+        totalRating = totalRating + number;
+    }
+
+    let averageRating = totalRating / props.rating.length;
+
     return (
         <div className="movie-flex-container" style={{background: `linear-gradient(
             rgba(0, 0, 0, 0.55),
@@ -22,6 +29,7 @@ function MoviePrint(props) {
           backgroundSize: "cover"}}>
             <h1 className="movie-title">{props.title}</h1>
             <p className="movie-desc">{props.desc}</p>
+            <p className="movie-rating">Your friends have rated this movie {averageRating}/5 stars</p>
             <CommentsModal
                 movieId={props.movieId}
                 handleGetSavedMovies={props.handleGetSavedMovies}

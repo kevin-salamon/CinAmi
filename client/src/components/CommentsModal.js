@@ -30,7 +30,7 @@ function CommentsModal(props) {
 
     return (
         <>
-            <button variant="primary" className="btn btn-info header-button" onClick={handleShow}>
+            <button variant="primary" className="btn btn-info comment-button" onClick={handleShow}>
                 Reviews
             </button>
 

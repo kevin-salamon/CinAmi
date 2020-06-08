@@ -33,7 +33,7 @@ function NewMovieModal(props) {
 
     return (
         <>
-            <button variant="primary" className="btn btn-info header-button" onClick={handleShow}>
+            <button className="btn btn-info header-button-add" style={{margin: "0 auto"}} onClick={handleShow}>
                 Add Movie
             </button>
 

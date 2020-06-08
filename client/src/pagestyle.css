@@ -3,21 +3,44 @@
 }
 
 .header-custom {
-    padding: 10px;
-    background-color: rgb(52, 50, 61);
+    padding: 20px;
+    background-color: #4C4E49;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.logo {
-    width: 200px;
-    height: 85px;
-}
-
-.header-description {
-    font-size: 1.2em;
-    font-weight: 550;
+.header-title {
+    font-size: 60px;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 0.0625em;
+    text-shadow: 1px 1px black;
+    color: white;
+    margin-left: 2%;
 }
 
 .header-button {
+    font-size: 1.0rem;
+    font-weight: 550;
+    height: 50px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1%;
+}
+
+.header-button-add {
+    font-size: 1.5rem;
+    font-weight: 550;
+    height: 60px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+.comment-button {
     font-size: 1.0rem;
     font-weight: 550;
     height: 30px;
@@ -28,24 +51,37 @@
 }
 
 .top-flex-container {
-    padding: 2% 20% 0.5% 20%;
+    margin: 1%;
+    margin-bottom: 0%;
+    padding: 2% 20% 2% 20%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center; 
     text-align: center;
+    background-color: #39AEC5;
+    align-items: center;
+    color: white;
 }
 
 .top-flex-container h1 {
+    font-size: 35px;
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 0.0625em;
+    text-shadow: 1px 1px black;
+}
 
+.top-flex-container p {
+    font-size: 18px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 500;
 }
 
 .input {
-
+    font-family: 'Lusitana', serif;
 }
 
 .flex-container {
-    padding-top: 1%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -66,12 +102,16 @@
 }
 
 .remove-movie {
-    justify-self: right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: rgb(165, 19, 19);
     color: white;
-    font-size: 16px;
+    font-size: 20px;
     margin-top: 5%;
     border-radius: 3px;
+    font-family: 'Bebas Neue', cursive;
+    width: 40px;
 }
 
 .movie-title {
@@ -87,6 +127,13 @@
     font-size: 0.8em;
 }
 
+.movie-rating {
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    font-size: 0.8em;
+    font-weight: 700;
+}
+
 .comment-container {
     width: 80%;
     height: 200px;
@@ -95,4 +142,25 @@
     background-color: white;
     color: black;
     text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+
+    .header-button, .header-button-add {
+        margin-bottom: 1%;
+        margin-top: 1%;
+    }
+
+    .top-flex-container {
+        padding: 2% 10% 2% 10%;
+    }
+
+    .top-flex-container p {
+        font-size: 14px;
+    }
+    
+    .top-flex-container input {
+        text-align: center;
+    }
+    
 }
