@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Header from "../components/Header";
 import MoviePrint from "../components/MoviePrint";
-import { removeMovie, getSavedMovies } from "../utils/API";
+import { getSavedMovies } from "../utils/API";
 import "../pagestyle.css";
 
 class Homepage extends Component {
@@ -24,12 +24,6 @@ class Homepage extends Component {
           .then((res) => {
             this.setState({ movieList: res.data })
           })
-          .catch(err => console.log(err));
-    }
-
-    handleRemoveMovie = movieId => {
-        removeMovie(movieId)
-          .then(this.handleGetSavedMovies)
           .catch(err => console.log(err));
     }
 
@@ -75,22 +69,22 @@ class Homepage extends Component {
                     </div>
                 ) : (
                     <div className="flex-container">
-                    {filteredMovies.map(movie => {
-                        return(
-                            <>                
-                                <MoviePrint 
-                                    key={movie._id}
-                                    movieId={movie._id}
-                                    background={movie.picture}
-                                    title={movie.title}
-                                    desc={movie.description}
-                                    rating={movie.rating}
-                                    comments={movie.comments}
-                                    handleGetSavedMovies={this.handleGetSavedMovies}
-                                />
-                            </>
-                        );
-                    })}
+                        {filteredMovies.map(movie => {
+                            return(
+                                <>                
+                                    <MoviePrint 
+                                        key={movie._id}
+                                        movieId={movie._id}
+                                        background={movie.picture}
+                                        title={movie.title}
+                                        desc={movie.description}
+                                        rating={movie.rating}
+                                        comments={movie.comments}
+                                        handleGetSavedMovies={this.handleGetSavedMovies}
+                                    />
+                                </>
+                            );
+                        })}
                     </div>
                 )}
             </>

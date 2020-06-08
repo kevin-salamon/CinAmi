@@ -1,14 +1,21 @@
 import React from 'react'
 import '../pagestyle.css';
 import CommentsModal from "./CommentsModal";
+import { removeMovie } from "../utils/API";
 
 function MoviePrint(props) {
+
+    function handleRemoveMovie(movieId) {
+        removeMovie(movieId)
+          .then(props.handleGetSavedMovies)
+          .catch(err => console.log(err));
+    }
 
     return (
         <div className="movie-flex-container" style={{background: `linear-gradient(
             rgba(0, 0, 0, 0.55),
             rgba(0, 0, 0, 0.55)
-          ), url(${props.background}) center no-repeat`,     
+          ), url(${props.background}) center`,     
           WebkitBackgroundSize: "cover",
           MozBackgroundSize: "cover",
           OBackgroundSize: "cover",
@@ -20,6 +27,7 @@ function MoviePrint(props) {
                 handleGetSavedMovies={props.handleGetSavedMovies}
                 comments={props.comments}
             />
+            <button className="remove-movie" onClick={() => handleRemoveMovie(props.movieId)}>X</button>
         </div>
     );
 };
