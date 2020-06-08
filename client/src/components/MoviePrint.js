@@ -1,6 +1,6 @@
 import React from 'react'
 import '../pagestyle.css';
-import EditCommentsModal from "./EditCommentsModal";
+import CommentsModal from "./CommentsModal";
 
 function MoviePrint(props) {
 
@@ -15,16 +15,10 @@ function MoviePrint(props) {
           backgroundSize: "cover"}}>
             <h1 className="movie-title">{props.title}</h1>
             <p className="movie-desc">{props.desc}</p>
-            <div className="comment-container">
-                {props.comments.map(comment => {
-                    return(         
-                            <p>{comment}</p>
-                    );
-                })}
-            </div>
-            <EditCommentsModal
+            <CommentsModal
                 movieId={props.movieId}
                 handleGetSavedMovies={props.handleGetSavedMovies}
+                comments={props.comments}
             />
         </div>
     );

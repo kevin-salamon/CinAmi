@@ -51,8 +51,22 @@ class Homepage extends Component {
             <>
                 <Header 
                     handleGetSavedMovies={this.handleGetSavedMovies}
-                    handleInputChange={this.handleInputChange}
                 />
+                <div className="top-flex-container">
+                    <h1>Welcome to CinAmi</h1>
+                    <p>Rate, review, and enjoy movies with your friends. Don't see your favorite movie here? Add it in yourself, and see what your buddies have to say about your tastes!
+                    You can filter through the list of available movies with the search bar below.
+                    </p>
+                    <form className="form">
+                            <input
+                                className="input"
+                                value={this.state.search}
+                                onChange={this.handleInputChange}
+                                type="text"
+                                placeholder="Search Movies"
+                            />
+                    </form>
+                </div>
                 {!this.state.movieList.length ? (
                     <div className="row">
                         <div className="col-sm-12">

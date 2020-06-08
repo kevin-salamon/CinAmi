@@ -3,7 +3,7 @@ import "../pagestyle.css";
 import Modal from 'react-bootstrap/Modal';
 import { updateMovie} from "../utils/API";
 
-function NewMovieModal(props) {
+function CommentsModal(props) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -31,7 +31,7 @@ function NewMovieModal(props) {
     return (
         <>
             <button variant="primary" className="btn btn-info header-button" onClick={handleShow}>
-                Add Comment
+                Reviews
             </button>
 
             <Modal show={show} onHide={handleClose}>
@@ -50,6 +50,14 @@ function NewMovieModal(props) {
                         </div>
                     </form>
 
+                    <div className="comment-container">
+                        {props.comments.map(comment => {
+                            return(         
+                                    <p>{comment}</p>
+                            );
+                        })}
+                    </div>
+
                 </Modal.Body>
                 <Modal.Footer className="text-center">
                     <button variant="primary" className="btn btn-info header-button" onClick={handleSubmit}>
@@ -62,4 +70,4 @@ function NewMovieModal(props) {
     );
 }
 
-export default NewMovieModal;
+export default CommentsModal;
