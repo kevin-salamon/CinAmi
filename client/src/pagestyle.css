@@ -40,6 +40,13 @@
     align-items: center;   
 }
 
+label {
+    color: white;
+    font-family: 'Roboto Slab', serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
 .comment-button {
     font-size: 1.0rem;
     font-weight: 550;
@@ -77,8 +84,16 @@
     font-weight: 500;
 }
 
+.top-flex-container input {
+    font-family: 'Lusitana', serif;
+}
+
 .input {
     font-family: 'Lusitana', serif;
+    width: 80%;
+    height: 40px;
+    border-radius: 2px;
+    border-color: rgb(143, 143, 143);
 }
 
 .flex-container {
@@ -86,6 +101,13 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.intro-text {
+    padding: 5%;
+    font-size: 28px;
+    letter-spacing: 0.01em;
+    font-family: 'Bebas Neue', cursive;
 }
 
 .movie-flex-container {
@@ -161,6 +183,11 @@
     
     .top-flex-container input {
         text-align: center;
+    }
+
+    .intro-text {
+        font-size: 20px;
+        margin: 1%;
     }
     
 }

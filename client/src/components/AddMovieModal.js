@@ -38,13 +38,14 @@ function NewMovieModal(props) {
             </button>
 
             <Modal show={show} onHide={handleClose}>
-                <Modal.Header closeButton>
-                    <Modal.Title className="modal-title">Add a new movie here </Modal.Title>
+                <Modal.Header style={{backgroundColor: "#4C4E49", color: "white"}} closeButton>
+                    <Modal.Title style={{fontFamily: "'Roboto Slab', serif", fontSize: "30px"}}>Add Movie</Modal.Title>
                 </Modal.Header>
-                <Modal.Body style={{ backgroundColor: "rgb(255, 179, 38)" }}>
+                <Modal.Body style={{ backgroundColor: "#39AEC5", borderBottomLeftRadius: "5px", borderBottomRightRadius: "5px"}}>
                     <form>
 
                         <div className="form-group text-center">
+                            <label>Title: </label><br/>
                             <input
                                 className="input"
                                 ref={titleRef}
@@ -53,6 +54,7 @@ function NewMovieModal(props) {
                             />
                         </div>
                         <div className="form-group text-center">
+                            <label>Picture URL: </label><br/>
                             <input
                                 className="input"
                                 ref={pictureRef}
@@ -61,6 +63,7 @@ function NewMovieModal(props) {
                             />
                         </div>
                         <div className="form-group text-center">
+                            <label>Description: </label><br/>
                             <input
                                 className="input"
                                 ref={descriptionRef}
@@ -68,15 +71,13 @@ function NewMovieModal(props) {
                                 placeholder="Description"
                             />
                         </div>
-
                     </form>
 
-                </Modal.Body>
-                <Modal.Footer className="text-center">
-                    <button variant="primary" className="btn btn-info header-button" onClick={handleSubmit}>
-                        Add Movie
+                    <button className="btn btn-light header-button" style={{margin: "0 auto"}} onClick={handleSubmit}>
+                        Submit
                     </button>
-                </Modal.Footer>
+
+                </Modal.Body>
 
             </Modal>
         </>

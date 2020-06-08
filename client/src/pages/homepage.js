@@ -49,11 +49,10 @@ class Homepage extends Component {
                 <div className="top-flex-container">
                     <h1>Welcome to <span style={{textDecoration: "underline", fontSize: "50px"}}>CinAmi</span></h1>
                     <p>Rate, review, and enjoy movies with your friends. Don't see your favorite movie here? Add it in yourself, and see what your buddies have to say!
-                    You can filter through the list of available movies with the search bar below.
+                    You can filter through the list of available movies with the search bar here.
                     </p>
                     <form className="form">
                             <input
-                                className="input"
                                 value={this.state.search}
                                 onChange={this.handleInputChange}
                                 type="text"
@@ -64,7 +63,9 @@ class Homepage extends Component {
                 {!this.state.movieList.length ? (
                     <div className="row">
                         <div className="col-sm-12">
-                            <h1 className="text-center intro-text">No movies yet!</h1>
+                            <h1 className="text-center intro-text">There are no movies listed to here yet. To get started, click on the big "Add Movie" button at the top of the screen,
+                            and tell us what you like!
+                            </h1>
                         </div>
                     </div>
                 ) : (
