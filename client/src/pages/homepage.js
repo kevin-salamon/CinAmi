@@ -6,12 +6,17 @@ import "../pagestyle.css";
 
 class Homepage extends Component {
     state = {
-        searchTerm: "",
+        search: "",
         movieList: []
     }
 
     componentDidMount() {
         this.handleGetSavedMovies();
+    }
+
+    handleInputChange = (event) => {
+        let searchTerm = event.target.value;
+        this.setState({search: searchTerm});
     }
 
     handleGetSavedMovies = () => {
@@ -37,10 +42,16 @@ class Homepage extends Component {
     };
 
     render() {
+
+        let filteredMovies = this.state.movieList.filter((movie) => {
+            return movie.title.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+        });
+
         return (
             <>
                 <Header 
                     handleGetSavedMovies={this.handleGetSavedMovies}
+                    handleInputChange={this.handleInputChange}
                 />
                 {!this.state.movieList.length ? (
                     <div className="row">
@@ -50,7 +61,7 @@ class Homepage extends Component {
                     </div>
                 ) : (
                     <div className="flex-container">
-                    {this.state.movieList.map(movie => {
+                    {filteredMovies.map(movie => {
                         return(
                             <>                
                                 <MoviePrint 

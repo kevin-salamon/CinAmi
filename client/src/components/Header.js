@@ -17,7 +17,7 @@ function Header(props) {
                         </div>
                         <div className="col-lg-1" style={{display: "flex", justifyContent: "center", alignItems: "center"}}>
                             <AddMovieModal 
-                                handleGetSavedMovies ={props.handleGetSavedMovies}
+                                handleGetSavedMovies = {props.handleGetSavedMovies}
                             />
                         </div>
                         <div className="col-lg-2" style={{display: "flex", justifyContent: "center", alignItems: "center"}}></div>
@@ -25,8 +25,8 @@ function Header(props) {
                         <form className="form">
                             <input
                                 className=""
-                                // value={props.search}
-                                // onChange={props.handleInputChange}
+                                value={props.searchTerm}
+                                onChange={props.handleInputChange}
                                 type="text"
                                 placeholder="Search Movies"
                             />
