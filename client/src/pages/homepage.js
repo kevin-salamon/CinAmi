@@ -62,7 +62,7 @@ class Homepage extends Component {
                                 value={this.state.search}
                                 onChange={this.handleInputChange}
                                 type="text"
-                                placeholder="Search Movies"
+                                placeholder="Filter Movies"
                             />
                     </form>
                 </div>

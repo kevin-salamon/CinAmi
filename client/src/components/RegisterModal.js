@@ -70,7 +70,7 @@ function RegisterModal(props) {
                                 className="input"
                                 ref={passwordRef}
                                 name="password"
-                                type="text"
+                                type="password"
                                 placeholder="Password"
                             />
                         </div>
