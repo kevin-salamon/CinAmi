@@ -24,6 +24,10 @@ export const getSavedUsers = () => {
   return axios.get("/api/users");
 }
 
+export const checkAuthUser = userData => {
+  return axios.get("/api/auth", userData);
+}
+
 export default {
   saveMovie,
   getSavedMovies,

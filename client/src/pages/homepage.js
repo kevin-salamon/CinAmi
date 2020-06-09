@@ -7,7 +7,7 @@ import "../pagestyle.css";
 class Homepage extends Component {
     state = {
         search: "",
-        movieList: []
+        movieList: [],
     }
 
     componentDidMount() {

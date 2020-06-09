@@ -17,6 +17,9 @@ function MoviePrint(props) {
     }
 
     let averageRating = totalRating / props.rating.length;
+    if (isNaN(averageRating)) {
+        averageRating = 0;
+    }
 
     return (
         <div className="movie-flex-container" style={{background: `linear-gradient(

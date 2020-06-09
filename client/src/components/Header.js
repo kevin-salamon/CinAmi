@@ -1,6 +1,8 @@
 import React from "react";
 import "../pagestyle.css";
 import AddMovieModal from "./AddMovieModal";
+import LoginModal from "./LoginModal";
+import RegisterModal from "./RegisterModal";
 
 function Header(props) {
 
@@ -11,10 +13,14 @@ function Header(props) {
                     CinAmi
                 </div>
                 <AddMovieModal 
-                        handleGetSavedMovies={props.handleGetSavedMovies}
+                    handleGetSavedMovies={props.handleGetSavedMovies}
                 />
-                <button className="btn btn-info header-button">Login</button>
-                <button className="btn btn-info header-button">Sign-up</button>
+                <LoginModal 
+                    handleGetSavedMovies={props.handleGetSavedMovies}
+                />
+                <RegisterModal 
+                    handleGetSavedMovies={props.handleGetSavedMovies}
+                />
             </nav>
         </>
     );
