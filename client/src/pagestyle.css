@@ -157,13 +157,18 @@ label {
 }
 
 .comment-container {
+    border: 1px solid black;
+    padding: 1%;
     width: 80%;
     height: 200px;
-    border: 2px solid black;
     overflow: auto;
     background-color: white;
     color: black;
     text-align: center;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    font-family: 'Lusitana', serif;
+    font-size: 16px;
 }
 
 @media screen and (max-width: 500px) {

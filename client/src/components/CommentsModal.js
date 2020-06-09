@@ -36,9 +36,18 @@ function CommentsModal(props) {
 
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title className="modal-title">Add a new movie here </Modal.Title>
+                    <Modal.Title className="modal-title">Current Reviews</Modal.Title>
                 </Modal.Header>
-                <Modal.Body style={{ backgroundColor: "rgb(255, 179, 38)" }}>
+                <Modal.Body style={{ backgroundColor: "#39AEC5", borderBottomLeftRadius: "5px", borderBottomRightRadius: "5px"}}>
+
+                    <div className="comment-container">
+                        {props.comments.map(comment => {
+                            return(         
+                                    <p>"{comment}"</p>
+                            );
+                        })}
+                    </div>
+
                     <form>
                         <div className="form-group text-center">
                             <input
@@ -50,21 +59,11 @@ function CommentsModal(props) {
                         </div>
                     </form>
 
-                    <div className="comment-container">
-                        {props.comments.map(comment => {
-                            return(         
-                                    <p>{comment}</p>
-                            );
-                        })}
-                    </div>
-
-                </Modal.Body>
-                <Modal.Footer className="text-center">
-                    <button variant="primary" className="btn btn-info header-button" onClick={handleSubmit}>
+                    <button variant="primary" className="btn btn-light header-button" style={{margin: "0 auto"}} onClick={handleSubmit}>
                         Add Comment
                     </button>
-                </Modal.Footer>
 
+                </Modal.Body>
             </Modal>
         </>
     );

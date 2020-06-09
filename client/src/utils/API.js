@@ -25,7 +25,7 @@ export const getSavedUsers = () => {
 }
 
 export const checkAuthUser = userData => {
-  return axios.get("/api/auth", userData);
+  return axios.post("/api/auth", userData);
 }
 
 export default {

@@ -18,7 +18,7 @@ function MoviePrint(props) {
 
     let averageRating = totalRating / props.rating.length;
     if (isNaN(averageRating)) {
-        averageRating = 0;
+        averageRating = "*";
     }
 
     return (
