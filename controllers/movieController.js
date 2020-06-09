@@ -1,4 +1,5 @@
 const db = require("../models");
+const auth = require("../middleware/auth");
 
 module.exports = {
   getSavedMovies: function(req, res) {
