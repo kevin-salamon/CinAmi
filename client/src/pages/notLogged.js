@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import Header from "../components/Header";
-import MoviePrint from "../components/MoviePrint";
+import HeaderNotLogged from "../components/HeaderNotLogged";
+import MoviePrintNotLogged from "../components/MoviePrintNotLogged";
 import { getSavedMovies } from "../utils/API";
 import "../pagestyle.css";
 import { getJWT } from "../helpers/jwt";
+import { Redirect } from "react-router-dom";
 
-class Homepage extends Component {
+class NotLogged extends Component {
     state = {
         search: "",
         movieList: [],
@@ -13,11 +14,11 @@ class Homepage extends Component {
     }
 
     componentDidMount() {
-        this.handleGetSavedMovies();
         const jwt = getJWT();
-        if (!jwt) {
-            this.props.history.push("/notlogged")
+        if (jwt) {
+            this.props.history.push("/");
         }
+        this.handleGetSavedMovies();
     }
 
     handleInputChange = (event) => {
@@ -47,10 +48,16 @@ class Homepage extends Component {
             return movie.title.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
         });
 
+        const jwt = getJWT();
+        if (jwt) {
+            return <Redirect to='/'/>
+        }
+
         return (
             <>
-                <Header 
+                <HeaderNotLogged
                     handleGetSavedMovies={this.handleGetSavedMovies}
+                    history={this.props.history}
                 />
                 <div className="top-flex-container">
                     <h1>Welcome to <span style={{textDecoration: "underline", fontSize: "50px"}}>CinAmi</span></h1>
@@ -79,7 +86,7 @@ class Homepage extends Component {
                         {filteredMovies.map(movie => {
                             return(
                                 <>                
-                                    <MoviePrint 
+                                    <MoviePrintNotLogged 
                                         key={movie._id}
                                         movieId={movie._id}
                                         background={movie.picture}
@@ -102,4 +109,4 @@ class Homepage extends Component {
 }
 
 
-export default Homepage;
+export default NotLogged;

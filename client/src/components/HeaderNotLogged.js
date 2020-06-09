@@ -1,14 +1,9 @@
 import React from "react";
 import "../pagestyle.css";
-import AddMovieModal from "./AddMovieModal";
+import LoginModal from "./LoginModal";
 import RegisterModal from "./RegisterModal";
 
-function Header(props) {
-
-    function logout() {
-        localStorage.clear();
-        window.location.reload();
-    }
+function HeaderNotLogged(props) {
 
     return (
         <>
@@ -16,12 +11,12 @@ function Header(props) {
                 <div className="header-title">
                     CinAmi
                 </div>
-                <AddMovieModal 
+                <button className="btn btn-info header-button-add" style={{margin: "0 auto"}} onClick={() => alert("Please log-in to use this feature.")}>
+                    Add Movie
+                </button>
+                <LoginModal 
                     handleGetSavedMovies={props.handleGetSavedMovies}
                 />
-                <button className="btn btn-info header-button" onClick={() => logout()}>
-                    Log-out
-                </button>
                 <RegisterModal 
                     handleGetSavedMovies={props.handleGetSavedMovies}
                 />
@@ -32,4 +27,4 @@ function Header(props) {
 
 
 
-export default Header;
+export default HeaderNotLogged;

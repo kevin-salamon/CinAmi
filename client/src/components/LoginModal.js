@@ -3,6 +3,7 @@ import "../pagestyle.css";
 import Modal from 'react-bootstrap/Modal';
 import { checkAuthUser } from "../utils/API";
 
+
 function LoginModal(props) {
     const [show, setShow] = useState(false);
 
@@ -22,11 +23,17 @@ function LoginModal(props) {
         console.log(`checking user: ${user}`);
         checkAuthUser(user)
             .then(res => {
-                console.log(res)
-                props.handleGetSavedMovies();
+                if (!res.data.token) {
+                    alert("No user found for given credentials.")
+                } else {
+                    console.log(res);
+                    localStorage.setItem("ca-jwtSecret", res.data.token);
+                    props.handleGetSavedMovies();
+                }
             });
         
         handleClose();
+
     }
 
     return (
@@ -58,7 +65,7 @@ function LoginModal(props) {
                                 className="input"
                                 ref={passwordRef}
                                 name="password"
-                                type="text"
+                                type="password"
                                 placeholder="Password"
                             />
                         </div>

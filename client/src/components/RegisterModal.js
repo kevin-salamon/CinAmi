@@ -27,7 +27,7 @@ function RegisterModal(props) {
                 console.log(res)
                 props.handleGetSavedMovies();
             });
-        alert("User regisyered! Please log-in to continue.");
+        alert("User registered! Please log-in to continue.");
         handleClose();
     }
 
