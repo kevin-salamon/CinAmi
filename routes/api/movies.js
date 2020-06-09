@@ -4,10 +4,10 @@ const auth = require("../../middleware/auth");
 
 router.route("/")
     .get(movieController.getSavedMovies)
-    .post(auth, movieController.saveMovie);
+    .post(movieController.saveMovie);
 
 router.route("/:id")
-    .delete(auth, movieController.removeMovie)
-    .put(auth, movieController.updateMovie);
+    .delete( movieController.removeMovie)
+    .put(movieController.updateMovie);
 
 module.exports = router;

@@ -6,6 +6,6 @@ router.route("/")
     .post(authController.checkAuthUser);
 
 router.route("/user")
-    .get(auth, authController.getAuthUser);
+    .get(authController.getAuthUser);
 
 module.exports = router;
