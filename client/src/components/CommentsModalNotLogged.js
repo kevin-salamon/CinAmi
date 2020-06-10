@@ -28,7 +28,7 @@ function CommentsModalNotLogged(props) {
                         ) : (
                             props.comments.map(comment => {
                                 return(         
-                                    <p>'{comment}'</p>
+                                    <p>- '{comment}'</p>
                                 );
                             })
                         )}
