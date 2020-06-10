@@ -27,7 +27,8 @@ function LoginModal(props) {
                     alert("No user found for given credentials.")
                 } else {
                     console.log(res);
-                    localStorage.setItem("ca-jwtSecret", res.data.token);
+                    localStorage.setItem("ca-jwtToken", res.data.token);
+                    localStorage.setItem("ca-jwtUser", res.data.user.name);
                     props.handleGetSavedMovies();
                 }
             });

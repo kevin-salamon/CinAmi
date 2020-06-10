@@ -3,13 +3,13 @@ import Header from "../components/Header";
 import MoviePrint from "../components/MoviePrint";
 import { getSavedMovies } from "../utils/API";
 import "../pagestyle.css";
-import { getJWT } from "../helpers/jwt";
+import { getJWT, getUser } from "../helpers/jwt";
 
 class Homepage extends Component {
     state = {
         search: "",
         movieList: [],
-        userToken: undefined
+        user: ""
     }
 
     componentDidMount() {
@@ -17,6 +17,11 @@ class Homepage extends Component {
         const jwt = getJWT();
         if (!jwt) {
             this.props.history.push("/notlogged")
+        }
+
+        const jwtUser = getUser();
+        if (jwtUser) {
+            this.setState({ user: jwtUser});
         }
     }
 
@@ -53,7 +58,7 @@ class Homepage extends Component {
                     handleGetSavedMovies={this.handleGetSavedMovies}
                 />
                 <div className="top-flex-container">
-                    <h1>Welcome to <span style={{textDecoration: "underline", fontSize: "50px"}}>CinAmi</span></h1>
+                    <h1>Welcome to <span style={{textDecoration: "underline", fontSize: "50px"}}>CinAmi</span>, {this.state.user}</h1>
                     <p>Rate, review, and enjoy movies with your friends. Don't see your favorite movie here? Add it in yourself, and see what your buddies have to say!
                     You can filter through the list of available movies with the search bar here.
                     </p>
@@ -62,7 +67,7 @@ class Homepage extends Component {
                                 value={this.state.search}
                                 onChange={this.handleInputChange}
                                 type="text"
-                                placeholder="Filter0 Movies"
+                                placeholder="Filter Movies"
                             />
                     </form>
                 </div>
