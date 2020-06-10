@@ -55,7 +55,8 @@ function NewMovieModal(props) {
                         </div>
                         <div className="form-group text-center">
                             <label>Picture URL: </label><br/>
-                            <input
+                            <textarea
+                                rows="2"
                                 className="input"
                                 ref={pictureRef}
                                 type="text"
@@ -64,7 +65,8 @@ function NewMovieModal(props) {
                         </div>
                         <div className="form-group text-center">
                             <label>Description: </label><br/>
-                            <input
+                            <textarea
+                                rows="2"
                                 className="input"
                                 ref={descriptionRef}
                                 type="text"

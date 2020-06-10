@@ -65,7 +65,8 @@ function CommentsModal(props) {
                     <div className="review-container">
                         <form>
                             <div className="form-group text-center">
-                                <input
+                                <textarea
+                                    rows="2"
                                     className="input-comment"
                                     ref={commentRef}
                                     type="text"
