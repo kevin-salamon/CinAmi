@@ -30,13 +30,15 @@ class Homepage extends Component {
 
 ## Installation
 
+#### The development mode of this app uses MongoDB + the MongoDB CLI in order to run - please ensure that your machine possesses the same in order for the app to function locally.
+
 ### Clone
 
 > Clone this repo to your local machine using: https://github.com/kevin-salamon/CinAmi.git
 
 ### Setup
 
-> run 'npm install' in your CLI of choice in the project root directory.
+> Run 'npm install' in your CLI of choice in the project root directory.
 
 ```shell
 $ npm install
@@ -62,6 +64,7 @@ $ npm start
 - Viewing existing movies is simple - all available movies will appear towards the bottom of the screen. A search bar above these movies allows users to filter the movies based on title. 
 - Should a user want to create a movie, they simple have to click the large "add movie" button on the top navbar, and submit a title, description, and picture URL, while logged in. To delete a movie, simply click the red X button towards the bottom of each movie box.
 - To view comments and add comments/ratings, simply click on the 'reviews' button within each movie block. A submission of a full review is one comment and one rating. Each user may only review each movie one time. Even users who are not logged-in may view reviews.
+
 ---
 
 ## Support
