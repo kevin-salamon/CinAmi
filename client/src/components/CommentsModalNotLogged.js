@@ -21,11 +21,15 @@ function CommentsModalNotLogged(props) {
                 <Modal.Body style={{ backgroundColor: "#39AEC5", borderBottomLeftRadius: "5px", borderBottomRightRadius: "5px"}}>
 
                     <div className="comment-container">
-                        {props.comments.map(comment => {
-                            return(         
-                                    <p>"{comment}"</p>
-                            );
-                        })}
+                        {!props.comments.length ? (
+                            <p style={{margin: "10%", textDecoration: "underline", fontSize: "20px"}}>There aren't any reviews here yet. Log-in to create your very own review!</p>
+                        ) : (
+                            props.comments.map(comment => {
+                                return(         
+                                    <p>'{comment}'</p>
+                                );
+                            })
+                        )}
                     </div>
 
                 </Modal.Body>

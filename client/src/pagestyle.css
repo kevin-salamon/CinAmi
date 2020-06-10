@@ -91,7 +91,7 @@ label {
 .input {
     font-family: 'Lusitana', serif;
     width: 80%;
-    height: 40px;
+    height: 60px;
     border-radius: 2px;
     border-color: rgb(143, 143, 143);
 }
@@ -129,11 +129,14 @@ label {
     justify-content: center;
     background-color: rgb(165, 19, 19);
     color: white;
-    font-size: 20px;
+    font-size: 16px;
     margin-top: 5%;
-    border-radius: 3px;
-    font-family: 'Bebas Neue', cursive;
-    width: 40px;
+    font-family: 'Roboto Slab', serif;
+    width: 30px;
+}
+
+.remove-movie:hover {
+    background-color: rgb(190, 23, 23);
 }
 
 .movie-title {
@@ -152,23 +155,35 @@ label {
 .movie-rating {
     text-align: center;
     font-family: 'Roboto Slab', serif;
-    font-size: 0.8em;
-    font-weight: 700;
+    font-size: 0.9em;
+    font-weight: 600;
 }
 
 .comment-container {
-    border: 1px solid black;
-    padding: 1%;
+    border: 1px solid rgb(131, 163, 168);
+    padding: 2%;
     width: 80%;
-    height: 200px;
+    height: 300px;
     overflow: auto;
-    background-color: white;
+    background-color: rgb(205, 244, 252);
     color: black;
     text-align: center;
     margin: 0 auto;
     margin-bottom: 10px;
-    font-family: 'Lusitana', serif;
+    font-family: 'Roboto Slab', serif;
     font-size: 16px;
+    border-radius: 3px;
+}
+
+.review-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+select {
+    height: 60px;
+    font-family: 'Roboto Slab', serif;
 }
 
 @media screen and (max-width: 500px) {
