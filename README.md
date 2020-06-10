@@ -1,3 +1,5 @@
+<a href="https://cinami.herokuapp.com/"><img src="./logo/logo.png" title="CinAmi" alt="favicon"></a>
+
 # CinAmi
 
 > A MERN-stack movie review app that allows the user and their friends to add, review, and comment on each film. Supports JWT login and authentication, and hashes passwords with BCryptJS.
