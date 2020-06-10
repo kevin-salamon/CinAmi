@@ -23,15 +23,12 @@ function LoginModal(props) {
         console.log(`checking user: ${user}`);
         checkAuthUser(user)
             .then(res => {
-                if (!res.data.token) {
-                    alert("No user found for given credentials.")
-                } else {
-                    console.log(res);
-                    localStorage.setItem("ca-jwtToken", res.data.token);
-                    localStorage.setItem("ca-jwtUser", res.data.user.name);
-                    props.handleGetSavedMovies();
-                }
-            });
+                console.log(res);
+                localStorage.setItem("ca-jwtToken", res.data.token);
+                localStorage.setItem("ca-jwtUser", res.data.user.name);
+                props.handleGetSavedMovies();
+            })
+            .catch(err => alert("Sorry, those login credentials didn't match our database. Please try again."));
         
         handleClose();
 

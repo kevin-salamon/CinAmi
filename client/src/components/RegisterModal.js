@@ -24,10 +24,10 @@ function RegisterModal(props) {
         console.log(`Creating user: ${user}`);
         saveUser(user)
             .then(res => {
-                console.log(res)
+                console.log(res);
                 props.handleGetSavedMovies();
-            });
-        alert("User registered! Please log-in to continue.");
+                alert("User registered! Please log-in to continue.");
+            }).catch(err => alert("User already exists for given email."));
         handleClose();
     }
 
