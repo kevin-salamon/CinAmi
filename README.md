@@ -23,6 +23,7 @@ class Homepage extends Component {
 
 - [Installation](#installation)
 - [Features](#features)
+- [Usage](#usage)
 - [Support](#support)
 - [License](#license)
 
