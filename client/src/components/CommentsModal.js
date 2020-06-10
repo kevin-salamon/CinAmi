@@ -31,6 +31,8 @@ function CommentsModal(props) {
 
         handleUpdateMovie(props.movieId, newComment);
         handleUpdateMovie(props.movieId, newRating);
+
+        localStorage.setItem(`${props.title}`, "reviewed");
         
         handleClose();
     }
@@ -49,7 +51,9 @@ function CommentsModal(props) {
 
                     <div className="comment-container">
                     {!props.comments.length ? (
-                            <p style={{margin: "10%", textDecoration: "underline", fontSize: "20px"}}>There aren't any reviews here yet. Log-in to create your very own review!</p>
+                            <p style={{margin: "10%", textDecoration: "underline", fontSize: "20px"}}>There aren't any reviews here yet. Log-in to create your very own review!
+                            Don't forget that each user can only review each movie once.
+                            </p>
                         ) : (
                             props.comments.map(comment => {
                                 return(         
@@ -62,8 +66,7 @@ function CommentsModal(props) {
                         <form>
                             <div className="form-group text-center">
                                 <input
-                                    style={{width: "300px"}}
-                                    className="input"
+                                    className="input-comment"
                                     ref={commentRef}
                                     type="text"
                                     placeholder="New Comment"

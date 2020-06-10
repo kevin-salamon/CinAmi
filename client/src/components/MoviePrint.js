@@ -1,6 +1,7 @@
 import React from 'react'
 import '../pagestyle.css';
 import CommentsModal from "./CommentsModal";
+import CommentsModalNotLogged from "./CommentsModalNotLogged";
 import { removeMovie } from "../utils/API";
 
 function MoviePrint(props) {
@@ -33,11 +34,20 @@ function MoviePrint(props) {
             <h1 className="movie-title">{props.title}</h1>
             <p className="movie-desc">{props.desc}</p>
             <p className="movie-rating">Your friends have rated this movie <span style={{fontSize: "1.2em", textDecoration: "underline"}}>{averageRating}/5</span> stars on average.</p>
-            <CommentsModal
-                movieId={props.movieId}
-                handleGetSavedMovies={props.handleGetSavedMovies}
-                comments={props.comments}
-            />
+            {!(localStorage.getItem(`${props.title}`)) ? (
+                <CommentsModal
+                    title={props.title}
+                    movieId={props.movieId}
+                    handleGetSavedMovies={props.handleGetSavedMovies}
+                    comments={props.comments}
+                />
+            ) : (
+                <CommentsModalNotLogged
+                    movieId={props.movieId}
+                    handleGetSavedMovies={props.handleGetSavedMovies}
+                    comments={props.comments}
+                />
+            )}
             <button className="remove-movie" onClick={() => handleRemoveMovie(props.movieId)}>X</button>
         </div>
     );

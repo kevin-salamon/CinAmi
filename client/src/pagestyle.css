@@ -96,6 +96,14 @@ label {
     border-color: rgb(143, 143, 143);
 }
 
+.input-comment {
+    font-family: 'Lusitana', serif;
+    width: 300px;
+    height: 60px;
+    border-radius: 2px;
+    border-color: rgb(143, 143, 143);
+}
+
 .flex-container {
     display: flex;
     flex-direction: row;
@@ -208,6 +216,10 @@ select {
     .intro-text {
         font-size: 20px;
         margin: 1%;
+    }
+
+    .input-comment {
+        width: 200px;
     }
     
 }
